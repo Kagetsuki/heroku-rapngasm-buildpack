@@ -31,3 +31,5 @@ setDefaultEnv LIBRARY_PATH "lib"
 setDefaultEnv LD_LIBRARY_PATH "lib"
 setDefaultEnv CPATH "include"
 setDefaultEnv XDG_DATA_DIRS "share"
+
+alias swig=/app/vendor/bin/swig
