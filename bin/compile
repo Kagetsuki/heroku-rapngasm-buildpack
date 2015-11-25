@@ -13,6 +13,8 @@ VENDOR_DIR="$BUILD_DIR/vendor"
 EXPORT_PATH="$PWD/export"
 PROFILE_PATH="$BUILD_DIR/.profile.d/rapngasm.sh"
 
+mkdir -p $(dirname $PROFILE_PATH)
+
 function setDefaultEnv (){
   echo "export $1=\$$1:/app/vendor/$2" >> $PROFILE_PATH
   echo "export $1=\$$1:/app/vendor/$2" >> $EXPORT_PATH
