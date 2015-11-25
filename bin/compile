@@ -11,7 +11,12 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 VENDOR_DIR="$BUILD_DIR/vendor"
 EXPORT_PATH="$PWD/export"
+PROFILE_PATH="$BUILD_DIR/.profile.d/rapngasm.sh"
 
+function setDefaultEnv (){
+  echo "export $1=\$$1:/app/vendor/$2" >> $PROFILE_PATH
+  echo "export $1=\$$1:/app/vendor/$2" >> $EXPORT_PATH
+}
 
 echo "=====> Inserting RAPNGAsm build system ☼"
 curl "https://s3-ap-northeast-1.amazonaws.com/gensou/vendor.tar.bz2" -s -o - | tar xjf - -C "$BUILD_DIR"
@@ -21,8 +26,8 @@ cp -R "$VENDOR_DIR/include" "/app/vendor/include"
 cp -R "$VENDOR_DIR/share" "/app/vendor/share"
 
 
-echo "export PATH=$PATH:/app/vendor/bin"
-echo "export LIBRARY_PATH=$LIBRARY_PATH:/app/vendor/lib"
-echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/vendor/lib"
-echo "export CPATH=$CPATH:/app/vendor/include"
-echo "export XDG_DATA_DIRS=$XDG_DATA_DIRS:/app/vendor/share"
+setDefaultEnv PATH "bin"
+setDefaultEnv LIBRARY_PATH "lib"
+setDefaultEnv LD_LIBRARY_PATH "lib"
+setDefaultEnv CPATH "include"
+setDefaultEnv XDG_DATA_DIRS "share"
