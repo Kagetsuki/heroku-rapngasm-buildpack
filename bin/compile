@@ -21,8 +21,8 @@ cp -R "$VENDOR_DIR/include" "/app/vendor/include"
 cp -R "$VENDOR_DIR/share" "/app/vendor/share"
 
 
-export PATH=$PATH:/app/vendor/bin
-export LIBRARY_PATH=$LIBRARY_PATH:/app/vendor/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/vendor/lib
-export CPATH=$CPATH:/app/vendor/include
-export XDG_DATA_DIRS=$XDG_DATA_DIRS:/app/vendor/share
+echo "export PATH=$PATH:/app/vendor/bin"
+echo "export LIBRARY_PATH=$LIBRARY_PATH:/app/vendor/lib"
+echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/vendor/lib"
+echo "export CPATH=$CPATH:/app/vendor/include"
+echo "export XDG_DATA_DIRS=$XDG_DATA_DIRS:/app/vendor/share"
