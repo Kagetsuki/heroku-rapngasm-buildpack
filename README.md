@@ -12,4 +12,4 @@ Dependencies provided are:
 
 Installing
 ----------
-```heroku buildpacks:add https://github.com/Kagetsuki/heroku-rapngasm-buildpack.git```
+```heroku buildpacks:add --index 1 https://github.com/Kagetsuki/heroku-rapngasm-buildpack.git```
