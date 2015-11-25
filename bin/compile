@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+
+# Fail fast
+set -e
+
+# Debug
+# set -x
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+VENDOR_DIR="$BUILD_DIR/vendor"
+EXPORT_PATH="$PWD/export"
+
+
+echo "=====> Inserting RAPNGAsm build system ☼"
+curl "https://s3-ap-northeast-1.amazonaws.com/gensou/vendor.tar.bz2" -s -o - | tar xjf - -C "$BUILD_DIR"
+cp -R "$VENDOR_DIR/bin" "/app/vendor/bin"
+cp -R "$VENDOR_DIR/lib" "/app/vendor/lib"
+cp -R "$VENDOR_DIR/include" "/app/vendor/include"
+cp -R "$VENDOR_DIR/share" "/app/vendor/share"
+
+
+export PATH=$PATH:/app/vendor/bin
+export LIBRARY_PATH=$LIBRARY_PATH:/app/vendor/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/app/vendor/lib
+export CPATH=$CPATH:/app/vendor/include
+export XDG_DATA_DIRS=$XDG_DATA_DIRS:/app/vendor/share
