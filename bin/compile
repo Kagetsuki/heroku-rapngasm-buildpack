@@ -29,9 +29,9 @@ cp -R "$VENDOR_DIR/share" "/app/vendor/share"
 
 
 # setDefaultEnv PATH "buildbin"
-export PATH="/app/vendor/buildbin:$PATH"
+echo "export PATH=/app/vendor/buildbin:$PATH" >> $EXPORT_PATH
 setDefaultEnv LIBRARY_PATH "lib"
 setDefaultEnv LD_LIBRARY_PATH "lib"
 setDefaultEnv CPATH "include"
 # setDefaultEnv XDG_DATA_DIRS "share"
-export XDG_DATA_DIRS="/app/vendor/share"
+echo "export XDG_DATA_DIRS=/app/vendor/share" >> $EXPORT_PATH
