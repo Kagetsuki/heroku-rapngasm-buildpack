@@ -22,10 +22,10 @@ function setDefaultEnv (){
 
 echo "=====> Inserting RAPNGAsm build system ☼"
 curl "https://s3-ap-northeast-1.amazonaws.com/gensou/vendor.tar.bz2" -s -o - | tar xjf - -C "$BUILD_DIR"
-cp -R "$VENDOR_DIR/bin" "/app/vendor/buildbin"
-cp -R "$VENDOR_DIR/lib" "/app/vendor/lib"
-cp -R "$VENDOR_DIR/include" "/app/vendor/include"
-cp -R "$VENDOR_DIR/share" "/app/vendor/share"
+cp -ar "$VENDOR_DIR/bin" "/app/vendor/buildbin"
+cp -ar "$VENDOR_DIR/lib" "/app/vendor/lib"
+cp -ar "$VENDOR_DIR/include" "/app/vendor/include"
+cp -ar "$VENDOR_DIR/share" "/app/vendor/share"
 
 
 # setDefaultEnv PATH "buildbin"
