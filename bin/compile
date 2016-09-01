@@ -23,15 +23,15 @@ function setDefaultEnv (){
 echo "=====> Inserting RAPNGAsm build system ☼"
 cd $BUILD_DIR
 echo "- Obtaining vendorized dependency pack"
-wget https://s3-ap-northeast-1.amazonaws.com/gensou/vendor.tar.bz2
+wget "https://s3-ap-northeast-1.amazonaws.com/gensou/vendor.tar.bz2"
 echo "- Unpacking"
-tar -xjf vendor.tar.bz2
+tar -xjf "vendor.tar.bz2"
 echo "- Removing tarball"
-rm vendor.tar.bz2
+rm "vendor.tar.bz2"
 echo "- Copying vendorized assets"
 cp -ar "$VENDOR_DIR/bin" "/app/vendor/buildbin"
-cp -ar "$VENDOR_DIR/lib" "/app/vendor/lib"
 cp -ar "$VENDOR_DIR/include" "/app/vendor/include"
+cp -ar "$VENDOR_DIR/lib" "/app/vendor/lib"
 cp -ar "$VENDOR_DIR/share" "/app/vendor/share"
 
 
