@@ -34,11 +34,6 @@ cp -ar "$VENDOR_DIR/include" "/app/vendor/include"
 cp -ar "$VENDOR_DIR/lib" "/app/vendor/lib"
 cp -ar "$VENDOR_DIR/share" "/app/vendor/share"
 
-echo "- kludge package detection for gobject-introspection"
-cd "$VENDOR_DIR/debs"
-sudo dpkg -i *
-
-
 # setDefaultEnv PATH "buildbin"
 echo "export PATH=/app/vendor/buildbin:$PATH" >> $EXPORT_PATH
 setDefaultEnv LIBRARY_PATH "lib"
