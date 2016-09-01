@@ -35,8 +35,8 @@ cp -ar "$VENDOR_DIR/lib" "/app/vendor/lib"
 cp -ar "$VENDOR_DIR/share" "/app/vendor/share"
 
 echo "- kludge package detection for gobject-introspection"
-apt-get update
-apt-get install -y "libgirepository1.0-dev"
+cd "$VENDOR_DIR/debs"
+dpkg -i *
 
 
 # setDefaultEnv PATH "buildbin"
