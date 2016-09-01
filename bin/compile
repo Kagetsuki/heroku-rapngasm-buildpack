@@ -36,7 +36,7 @@ cp -ar "$VENDOR_DIR/share" "/app/vendor/share"
 
 echo "- kludge package detection for gobject-introspection"
 cd "$VENDOR_DIR/debs"
-dpkg -i *
+sudo dpkg -i *
 
 
 # setDefaultEnv PATH "buildbin"
