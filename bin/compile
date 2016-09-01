@@ -29,7 +29,10 @@ tar -xjf vendor.tar.bz2
 echo "- Removing tarball"
 rm vendor.tar.bz2
 echo "- Copying vendorized assets"
-cp -ar "$VENDOR_DIR/*" "/app/vendor/"
+cp -ar "$VENDOR_DIR/bin" "/app/vendor/buildbin"
+cp -ar "$VENDOR_DIR/lib" "/app/vendor/lib"
+cp -ar "$VENDOR_DIR/include" "/app/vendor/include"
+cp -ar "$VENDOR_DIR/share" "/app/vendor/share"
 
 
 # setDefaultEnv PATH "buildbin"
