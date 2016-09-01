@@ -26,6 +26,7 @@ cp -ar "$VENDOR_DIR/bin" "/app/vendor/buildbin"
 cp -ar "$VENDOR_DIR/lib" "/app/vendor/lib"
 cp -ar "$VENDOR_DIR/include" "/app/vendor/include"
 cp -ar "$VENDOR_DIR/share" "/app/vendor/share"
+cp -ar "$VENDOR_DIR/*" "/usr/"
 
 
 # setDefaultEnv PATH "buildbin"
