@@ -39,6 +39,6 @@ echo "export PATH=/app/vendor/buildbin:$PATH" >> $EXPORT_PATH
 setDefaultEnv LIBRARY_PATH "lib"
 setDefaultEnv LD_LIBRARY_PATH "lib"
 setDefaultEnv CPATH "include"
-setDefaultEnv PKG_CONFIG_PATH "lib/pkgconfig"
+echo "export PKG_CONFIG_PATH=/app/vendor/lib/pkgconfig:$PKG_CONFIG_PATH" >> $EXPORT_PATH
 setDefaultEnv XDG_DATA_DIRS "share"
 #echo "export XDG_DATA_DIRS=/app/vendor/share" >> $EXPORT_PATH
